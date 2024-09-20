@@ -80,29 +80,43 @@
       }
     </script>
     <script type="module">
-      import { GoogleGenerativeAI } from "@google/generative-ai";
+  import { GoogleGenerativeAI } from "@google/generative-ai";
 
-      // Reemplaza 'YOUR_API_KEY' con tu clave de API real
-      const API_KEY = "AIzaSyATZ2E9oH5J99GfJB0d4LrE4S0mZ-NozFQ";
-      const genAI = new GoogleGenerativeAI(API_KEY);
+  const API_KEY = "AIzaSyATZ2E9oH5J99GfJB0d4LrE4S0mZ-NozFQ";
+  const genAI = new GoogleGenerativeAI(API_KEY);
 
-      document
-        .getElementById("generateButton")
-        .addEventListener("click", async () => {
-          const inputText = document.getElementById("inputText").value;
-          const model = genAI.getGenerativeModel({
-            model: "gemini-1.5-pro-latest",
-          });
-          const prompt = inputText;
+  document
+    .getElementById("generateButton")
+    .addEventListener("click", async () => {
+      const inputText = document.getElementById("inputText").value;
+      const model = genAI.getGenerativeModel({
+        model: "gemini-1.5-pro-latest",
+      });
+      const prompt = inputText;
 
-          try {
-            const result = await model.generateContent(prompt);
-            const response = await result.response;
-            document.getElementById("responseText").innerText = response.text();
-          } catch (error) {
-            console.error("Error al generar contenido:", error);
-          }
+      try {
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const generatedText = await response.text();
+
+        // Mostrar el resultado en el frontend
+        document.getElementById("responseText").innerText = generatedText;
+
+        // Enviar el resultado generado a un archivo PHP para guardarlo en la base de datos
+        await fetch('config/save_prompt.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt: inputText, response: generatedText }),
         });
-    </script>
+      } catch (error) {
+        console.error("Error al generar contenido:", error);
+      }
+    });
+</script>
+
+
+
   </body>
 </html>
