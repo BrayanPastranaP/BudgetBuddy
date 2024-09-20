@@ -72,6 +72,11 @@ $result_gastos = obtenerGastos();
               <li>
                 <a href="gastos.php"><i class="uil uil-minus-circle"></i> Gastos</a>
               </li>
+              <li>
+                <a href="movimientos.php"
+                  ><i class="uil uil-minus-circle"></i> Movimientos</a
+                >
+              </li>
             </ul>
           </nav>
         </div>

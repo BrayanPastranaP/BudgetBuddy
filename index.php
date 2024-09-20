@@ -61,6 +61,11 @@ $total_gasto = $result_gastos->fetch_assoc()['total_gasto'] ?? 0;
                   ><i class="uil uil-minus-circle"></i> Gastos</a
                 >
               </li>
+              <li>
+                <a href="movimientos.php"
+                  ><i class="uil uil-minus-circle"></i> Movimientos</a
+                >
+              </li>
             </ul>
           </nav>
         </div>

@@ -349,3 +349,83 @@ form {
     margin:0;
     margin:0 auto;
   }
+
+
+  /* Movimientos */
+
+  
+  header h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .content-flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  section {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 45%;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    background-color: var(--color-pink);
+    color: white;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+
+  tbody td {
+    text-align: center;
+  }
+  
+  table th, table td {
+    text-align: left;
+  }
+  
+  .no-data {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #777;
+  }
+  
+  @media (max-width: 768px) {
+    .content-flex {
+      flex-direction: column;
+    }
+  
+    section {
+      width: 100%;
+    }
+  }
+  
+  .movimientos h1{
+margin: 40px;
+  }
