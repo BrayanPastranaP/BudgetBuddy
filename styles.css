@@ -1,431 +1,431 @@
 :root {
-    --body-color: #121526;
-    --card-bg-color: #161B2E;
-    --color-pink: #D513CB;
+  --body-color: #121526;
+  --card-bg-color: #161b2e;
+  --color-pink: #d513cb;
 }
 
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--body-color);
-    color: #fff;
-    display: flex;
-    height: 100vh;
-    box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  background-color: var(--body-color);
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 .container {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 /* Sidebar */
 .sidebar {
-    width: 300px;
-    padding: 30px;
-    border-radius: 20px;
-    background-color: var(--card-bg-color);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    z-index: 1000;
-    transition: transform 0.3s ease;
+  width: 300px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease;
 }
 
 /* Ocultar solo en pantallas pequeñas */
 @media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-    }
+  .sidebar {
+    transform: translateX(-100%);
+  }
 
-    .sidebar.active {
-        transform: translateX(0);
-    }
+  .sidebar.active {
+    transform: translateX(0);
+  }
 }
 
 .sidebar.active {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 /* Botón de menú hamburguesa */
 .hamburger-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px; /* Mover el icono de hamburguesa a la derecha */
-    font-size: 32px;
-    cursor: pointer;
-    z-index: 1100;
-    color: #fff;
-    display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 20px;
+  right: 20px; /* Mover el icono de hamburguesa a la derecha */
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 1100;
+  color: #fff;
+  display: none; /* Oculto por defecto */
 }
 
 /* Mostrar el botón de menú hamburguesa en pantallas pequeñas */
 @media (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
-    }
+  .hamburger-menu {
+    display: block;
+  }
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-    width: 45px;
-    margin-right: 10px;
+  width: 45px;
+  margin-right: 10px;
 }
 
 .logo h2 {
-    color: #FF00FF;
+  color: #ff00ff;
 }
 
 nav ul {
-    list-style: none;
-    margin-top: 30px;
+  list-style: none;
+  margin-top: 30px;
 }
 
 nav ul li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 nav ul li a,
 .sidebar-footer a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    display: block;
-    width: 100%;
-    padding: 15px 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  padding: 15px 10px;
 }
 
 nav ul li a i,
 .sidebar-footer a i {
-    font-size: 24px;
-    margin-right: 10px;
+  font-size: 24px;
+  margin-right: 10px;
 }
 
 nav ul li a:hover,
 .sidebar-footer a:hover {
-    background: var(--color-pink);
-    border-radius: 10px;
+  background: var(--color-pink);
+  border-radius: 10px;
 }
 
 .sidebar-footer a {
-    color: #fff;
-    text-decoration: none;
-    margin-top: 10px;
-    display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
 }
 
 nav .nav__active {
-    border-radius: 10px;
-    background: var(--color-pink);
+  border-radius: 10px;
+  background: var(--color-pink);
 }
 
 /* Main Content */
 .main-content {
-    flex-grow: 1;
-    padding: 20px;
-    margin-left: 300px; /* Espacio para el sidebar */
-    transition: margin-left 0.3s ease;
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 300px; /* Espacio para el sidebar */
+  transition: margin-left 0.3s ease;
 }
 
 header h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 header h2 {
-    font-size: 18px;
-    color: #ccc;
-    margin-bottom: 20px;
-    padding-left: 20px;
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 20px;
+  padding-left: 20px;
 }
 
 /* Flex container for stats and ads */
 .content-flex {
-    display: flex;
-    gap: 20px; /* Espacio entre columnas */
+  display: flex;
+  gap: 20px; /* Espacio entre columnas */
 }
 
 .stats {
-    flex: 2;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .stat-item {
-    background-color: var(--card-bg-color);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    flex: 1 1 calc(50% - 20px);
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1 1 calc(50% - 20px);
 }
 
 .degradado {
-    font-size: 36px;
-    background: linear-gradient(to top, #D513CB, #1DDDF2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 45px; /* Ajusta el tamaño de la fuente como desees */
-    font-weight: bold;
+  font-size: 36px;
+  background: linear-gradient(to top, #d513cb, #1dddf2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 45px; /* Ajusta el tamaño de la fuente como desees */
+  font-weight: bold;
 }
 
 .stat-item.chart {
-    flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 
 button,
 .button_action {
-    background-color: #FF00FF;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
+  background-color: #ff00ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 button:hover {
-    background-color: #D600D6;
+  background-color: #d600d6;
 }
 
 .ads {
-    flex: 1;
-    background-color: #1E1E1E;
-    padding-top: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  background-color: #1e1e1e;
+  padding-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .ad {
-    text-align: center;
+  text-align: center;
 }
 
 .ad img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .ad p {
-    color: #ccc;
+  color: #ccc;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .main-content {
-        margin-left: 0;
-    }
+  .main-content {
+    margin-left: 0;
+  }
 
-    .sidebar {
-        width: 250px;
-    }
+  .sidebar {
+    width: 250px;
+  }
 
-    .content-flex {
-        flex-direction: column;
-    }
+  .content-flex {
+    flex-direction: column;
+  }
 }
-
-
-
-
 
 /* Ingresos */
 form {
-    width: 60%;
-    background-color: var(--card-bg-color); /* Ajusta el color de fondo del formulario según la imagen */
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    font-size: 20px;
-  }
-
-  form h2{
-    margin-bottom: 30px;
-  }
-
-  form textarea {
-    height: 150px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input, textarea, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 20px;
-    background-color: var(--card-bg-color);
-    color: #fff;
-    margin:20px 0;
-    font-size: 18px;
-    
-  }
-
- 
-  input, textarea{
-    border:1px solid #fff;
-  }
-  
-  button {
-    background-color: var(--color-pink);
-    cursor: pointer;
-  }
-
-  .ingresos_container{
-    display: flex;
-  }
-  @media (max-width: 768px) {
-    .ingresos_container{
-        flex-wrap: wrap;
-      }
-
-      form {
-        width: 100%;
-      }
-  }
-.ingresos_container .anuncios {
-    margin-left: 70px;
+  width: 60%;
+  background-color: var(
+    --card-bg-color
+  ); /* Ajusta el color de fondo del formulario según la imagen */
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
 }
 
-  .ingresos_container img {
-    max-width: 300px;
-    margin:20px 0;
-  }
-
-
-  .button-container {
-    width: 100%; /* Hace que el contenedor ocupe todo el ancho */
-    display: flex; /* Convierte el contenedor en un flexbox */
-    justify-content:center; /* Distribuye los botones uniformemente */
-    flex-direction: column;
-  }
-  
-  .button-container a {
-    text-align: center; /* Centra el texto dentro del botón */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    padding: 10px 20px; /* Añade espacio interno al botón */
-    
-    color: white; /* Color del texto blanco */
-    border: none; /* Elimina el borde */
-    border-radius: 5px; /* Añade esquinas redondeadas */
-    flex-grow: 1; /* Hace que cada botón ocupe todo el espacio disponible */
-    margin:20px 0;
-  }
-
-  .btn__register{
-    background-color: #A906F3;
-  }
-
-  .button-container .btn__login{
-    background-color: var(--color-pink); /* Color de fondo verde */
-  }
-.login_container {
-    margin:0;
-    margin-top:50px;
+form h2 {
+  margin-bottom: 30px;
 }
 
-  .login {
-    width: 50%;
-    margin:0;
-    margin:0 auto;
-  }
+form textarea {
+  height: 150px;
+}
 
+label {
+  display: block;
+  margin-bottom: 5px;
+}
 
-  /* Movimientos */
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--card-bg-color);
+  color: #fff;
+  margin: 20px 0;
+  font-size: 18px;
+}
 
-  
-  header h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  
-  .content-flex {
-    display: flex;
-    justify-content: space-around;
+input,
+textarea {
+  border: 1px solid #fff;
+}
+
+button {
+  background-color: var(--color-pink);
+  cursor: pointer;
+}
+
+.ingresos_container {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .ingresos_container {
     flex-wrap: wrap;
   }
-  
-  section {
-    background-color: var(--card-bg-color);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    width: 45%;
-  }
-  
-  h2 {
-    font-size: 1.8em;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  thead th {
-    background-color: var(--color-pink);
-    color: white;
-    text-align: left;
-    padding: 10px;
-  }
-  
-  tbody td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
 
-  tbody td {
-    text-align: center;
+  form {
+    width: 100%;
   }
-  
-  table th, table td {
-    text-align: left;
+}
+.ingresos_container .anuncios {
+  margin-left: 70px;
+}
+
+.ingresos_container img {
+  max-width: 300px;
+  margin: 20px 0;
+}
+
+.button-container {
+  width: 100%; /* Hace que el contenedor ocupe todo el ancho */
+  display: flex; /* Convierte el contenedor en un flexbox */
+  justify-content: center; /* Distribuye los botones uniformemente */
+  flex-direction: column;
+}
+
+.button-container a {
+  text-align: center; /* Centra el texto dentro del botón */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  padding: 10px 20px; /* Añade espacio interno al botón */
+
+  color: white; /* Color del texto blanco */
+  border: none; /* Elimina el borde */
+  border-radius: 5px; /* Añade esquinas redondeadas */
+  flex-grow: 1; /* Hace que cada botón ocupe todo el espacio disponible */
+  margin: 20px 0;
+}
+
+.btn__register {
+  background-color: #a906f3;
+}
+
+.button-container .btn__login {
+  background-color: var(--color-pink); /* Color de fondo verde */
+}
+.login_container {
+  margin: 0;
+  margin-top: 50px;
+}
+
+.login {
+  width: 50%;
+  margin: 0;
+  margin: 0 auto;
+}
+
+/* Movimientos */
+
+.movimientos .container{
+  width: 100%;
+}
+header h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.movimientos .content-flex {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  width: 70%;
+  margin:auto;
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background-color: var(--color-pink);
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+  text-align: center;
+}
+
+table th,
+table td {
+  text-align: left;
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .content-flex {
+    flex-direction: column;
   }
-  
-  .no-data {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.2em;
-    color: #777;
+
+  section {
+    width: 100%;
   }
-  
-  @media (max-width: 768px) {
-    .content-flex {
-      flex-direction: column;
-    }
-  
-    section {
-      width: 100%;
-    }
-  }
-  
-  .movimientos h1{
-margin: 40px;
-  }
+}
+
+.movimientos h1 {
+  margin: 40px;
+}
