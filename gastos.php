@@ -73,10 +73,12 @@ $result_gastos = obtenerGastos();
               <a href="gastos.php" class="nav__active"><i class="uil uil-minus-circle"></i> Gastos</a>
             </li>
             <li>
-                <a href="movimientos.php"
-                  ><i class="uil uil-minus-circle"></i> Movimientos</a
-                >
-              </li>
+              <a href="movimientos.php"><i class="uil uil-expand-from-corner"></i> Movimientos</a>
+            </li>
+            <li>
+              <a href="historial.php"><i class="uil uil-file-download-alt"></i> Histórico</a>
+            </li>
+
           </ul>
         </nav>
       </div>
@@ -108,6 +110,8 @@ $result_gastos = obtenerGastos();
           <option value="Saldo Restante">Saldo Restante</option>
           <option value="Deuda">Deuda</option>
         </select><br>
+
+        
 
 
 

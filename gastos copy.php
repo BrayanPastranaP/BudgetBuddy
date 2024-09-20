@@ -7,28 +7,29 @@ $gastos_fijos = $gastos_variable = $caprichos = $ahorros = $saldo_restante = $de
 
 // Manejo del formulario de ingresos
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['form_type']) && $_POST['form_type'] === 'ingreso') {
-  if (isset($_POST['monto'], $_POST['fecha_ingreso'], $_POST['nota'])) {
-    $monto = $_POST['monto'];
-    $fecha_ingreso = $_POST['fecha_ingreso'];
-    $nota = $_POST['nota'];
-    agregarIngreso($monto, $fecha_ingreso, $nota);
-  }
+    if (isset($_POST['monto'], $_POST['fecha_ingreso'], $_POST['nota'])) {
+        $monto = $_POST['monto'];
+        $fecha_ingreso = $_POST['fecha_ingreso'];
+        $nota = $_POST['nota'];
+        agregarIngreso($monto, $fecha_ingreso, $nota);
+    }
 }
 
 // Manejo del formulario de gastos
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['form_type']) && $_POST['form_type'] === 'gasto') {
-  if (isset($_POST['cantidad_gasto'], $_POST['fecha_gasto'], $_POST['tipo_gasto'])) {
-    $cantidad_gasto = $_POST['cantidad_gasto'];
-    $fecha_gasto = $_POST['fecha_gasto'];
-    $tipo_gasto = $_POST['tipo_gasto'];
-    agregarGasto($cantidad_gasto, $fecha_gasto, $tipo_gasto);
-  }
+    if (isset($_POST['cantidad_gasto'], $_POST['fecha_gasto'], $_POST['tipo_gasto'])) {
+        $cantidad_gasto = $_POST['cantidad_gasto'];
+        $fecha_gasto = $_POST['fecha_gasto'];
+        $tipo_gasto = $_POST['tipo_gasto'];
+        agregarGasto($cantidad_gasto, $fecha_gasto, $tipo_gasto);
+    }
 }
 
 // Obtener datos de ingresos y gastos
 $result_ingresos = obtenerIngresos();
 $result_gastos = obtenerGastos();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -66,17 +67,16 @@ $result_gastos = obtenerGastos();
               <a href="index.php"><i class="uil uil-estate"></i> Menú principal</a>
             </li>
             <li>
-              <a href="ingresos.php" class="nav__active"><i class="uil uil-plus-circle"></i> Ingresos</a>
+              <a href="ingresos.php"><i class="uil uil-plus-circle"></i> Ingresos</a>
             </li>
             <li>
-              <a href="gastos.php"><i class="uil uil-minus-circle"></i> Gastos</a>
+              <a href="gastos.php" class="nav__active"><i class="uil uil-minus-circle"></i> Gastos</a>
             </li>
             <li>
-              <a href="movimientos.php"><i class="uil uil-expand-from-corner"></i> Movimientos</a>
-            </li>
-            <li>
-              <a href="historial.php"><i class="uil uil-file-download-alt"></i> Histórico</a>
-            </li>
+                <a href="movimientos.php"
+                  ><i class="uil uil-minus-circle"></i> Movimientos</a
+                >
+              </li>
           </ul>
         </nav>
       </div>
@@ -90,24 +90,36 @@ $result_gastos = obtenerGastos();
     <!-- Main Content -->
     <main class="main-content ingresos_container">
       <form method="POST">
-        <input type="hidden" name="form_type" value="ingreso">
+        <input type="hidden" name="form_type" value="gasto">
 
-        <h2>¡Registremos tus ingresos!</h2>
-        <label for="cantidad">Cantidad de ingreso:</label>
-        <input type="number" step="0.01" name="monto" required><br>
+        <h2>¡Registremos tus gastos!</h2>
+        <label for="cantidad">Cantidad de gasto:</label>
+        <input type="number" step="0.01" name="cantidad_gasto" required><br>
 
-        <label for="fecha">Fecha de ingreso:</label>
-        <input type="date" name="fecha_ingreso" required><br>
+        <label for="fecha">Fecha de gasto:</label>
+        <input type="date" name="fecha_gasto" required><br>
 
-        <label for="nota">Nota del ingreso:</label>
-        <textarea id="nota" name="nota"></textarea>
+        <label for="tipo_gasto">Tipo de Gasto:</label>
+        <select name="tipo_gasto" required>
+          <option value="Gastos Fijos">Gastos Fijos</option>
+          <option value="Gastos Variables">Gastos Variables</option>
+          <option value="Caprichos">Caprichos</option>
+          <option value="Ahorros">Ahorros</option>
+          <option value="Saldo Restante">Saldo Restante</option>
+          <option value="Deuda">Deuda</option>
+        </select><br>
 
-        <button type="submit">Registrar</button>
+        <label for="prompt_gastos">Describe tu gasto:</label>
+        <textarea name="prompt_gastos" id="prompt_gastos"></textarea>
+
+
+
+        <input type="submit" class="button_action" value="Agregar Gasto">
       </form>
 
       <div class="anuncios">
-        <img src="img/stori.png" alt="tarjeta">
         <img src="img/klar.png" alt="tarjeta">
+        <img src="img/stori.png" alt="tarjeta">
       </div>
     </main>
   </div>

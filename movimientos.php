@@ -135,9 +135,12 @@ $conn->close();
                         <li>
                             <a href="gastos.php"><i class="uil uil-minus-circle"></i> Gastos</a>
                         </li>
-                        <li class="nav__active">
-                            <a href="movimientos.php"><i class="uil uil-minus-circle"></i>Movimientos</a>
-                        </li>
+                        <li>
+              <a href="movimientos.php"><i class="uil uil-expand-from-corner"></i> Movimientos</a>
+            </li>
+            <li>
+              <a href="historial.php"><i class="uil uil-file-download-alt"></i> Histórico</a>
+            </li>
                     </ul>
                 </nav>
             </div>
@@ -282,10 +285,10 @@ $conn->close();
                                     return cadenaSinAsteriscos;
                                 }
 
-                                // Ejemplo de uso:
-                                const miCadena = "Hola*mundo*cómo*estás";
-                                const resultado = eliminarAsteriscos(miCadena);
-                                console.log(resultado); // Imprimirá: Hola mundo cómo estás
+                                // // Ejemplo de uso:
+                                // const miCadena = "Hola*mundo*cómo*estás";
+                                // const resultado = eliminarAsteriscos(miCadena);
+                                // console.log(resultado); // Imprimirá: Hola mundo cómo estás
 
 
 

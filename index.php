@@ -18,6 +18,10 @@ $sql_gastos = "SELECT SUM(cantidad_gasto) as total_gasto FROM gastos";
 $result_gastos = $conn->query($sql_gastos);
 $total_gasto = $result_gastos->fetch_assoc()['total_gasto'] ?? 0;
 
+// Obtener el primer usuario de la tabla usuarios
+$sql_usuario = "SELECT nombre FROM usuarios LIMIT 1";
+$resultado_usuario = $conn->query($sql_usuario);
+$usuario = $resultado_usuario->fetch_assoc()['nombre'];
 
 ?>
 
@@ -62,7 +66,10 @@ $total_gasto = $result_gastos->fetch_assoc()['total_gasto'] ?? 0;
               <a href="gastos.php"><i class="uil uil-minus-circle"></i> Gastos</a>
             </li>
             <li>
-              <a href="movimientos.php"><i class="uil uil-minus-circle"></i> Movimientos</a>
+              <a href="movimientos.php"><i class="uil uil-expand-from-corner"></i> Movimientos</a>
+            </li>
+            <li>
+              <a href="movimientos.php"><i class="uil uil-file-download-alt"></i> Histórico</a>
             </li>
           </ul>
         </nav>
@@ -79,7 +86,7 @@ $total_gasto = $result_gastos->fetch_assoc()['total_gasto'] ?? 0;
     <main class="main-content">
       <header>
         <h1>¡Bienvenido de nuevo!</h1>
-        <h2>Pietro Filiberto</h2>
+        <h2><?php echo $usuario;?></h2>
       </header>
 
       <div class="content-flex">
@@ -113,13 +120,16 @@ $total_gasto = $result_gastos->fetch_assoc()['total_gasto'] ?? 0;
           <div class="ad">
             <img src="img/add.png" alt="Anuncio 1" />
           </div>
+
+          <?php $diferencia = $total_ingreso - $total_gasto;?>
+
           <div class="stat-item comparacion_mensual">
-            <h3>Comparación mensual</h3>
+            <h3>Saldo semanal</h3>
             <p>
-              Has gastado <br /><span class="degradado">$1,200</span><br />
-              más que el mes pasado
+              Tienes un saldo de <br /><span class="degradado">$<?php echo $diferencia; ?></span><br />
+              
             </p>
-            <button>Generar reporte</button>
+            <a href="movimientos.php"><button>Generar reporte</button></a>
           </div>
         </section>
       </div>

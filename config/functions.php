@@ -9,8 +9,6 @@ function agregarIngreso($monto, $fecha, $nota) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("dss", $monto, $fecha, $nota);
     $stmt->execute();
-
-    header("Location: index.php");
 }
 
 // Función para agregar un gasto
