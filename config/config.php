@@ -1,6 +1,6 @@
 <?php
 // config.php
-$host = 'localhost:3307'; // Cambia esto si tu servidor es diferente
+$host = 'localhost:3306'; // Cambia esto si tu servidor es diferente
 $db = 'finanzas'; // Cambia esto por el nombre de tu base de datos
 $user = 'root'; // Cambia esto por tu usuario
 $pass = ''; // Cambia esto por tu contraseña

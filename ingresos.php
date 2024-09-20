@@ -1,3 +1,35 @@
+<?php
+require 'config/functions.php';
+
+// Inicializar variables
+$monto = $fecha_ingreso = $nota = null;
+$gastos_fijos = $gastos_variable = $caprichos = $ahorros = $saldo_restante = $deuda = $fecha_pago = null;
+
+// Manejo del formulario de ingresos
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['form_type']) && $_POST['form_type'] === 'ingreso') {
+    if (isset($_POST['monto'], $_POST['fecha_ingreso'], $_POST['nota'])) {
+        $monto = $_POST['monto'];
+        $fecha_ingreso = $_POST['fecha_ingreso'];
+        $nota = $_POST['nota'];
+        agregarIngreso($monto, $fecha_ingreso, $nota);
+    }
+}
+
+// Manejo del formulario de gastos
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['form_type']) && $_POST['form_type'] === 'gasto') {
+    if (isset($_POST['cantidad_gasto'], $_POST['fecha_gasto'], $_POST['tipo_gasto'])) {
+        $cantidad_gasto = $_POST['cantidad_gasto'];
+        $fecha_gasto = $_POST['fecha_gasto'];
+        $tipo_gasto = $_POST['tipo_gasto'];
+        agregarGasto($cantidad_gasto, $fecha_gasto, $tipo_gasto);
+    }
+}
+
+// Obtener datos de ingresos y gastos
+$result_ingresos = obtenerIngresos();
+$result_gastos = obtenerGastos();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -52,13 +84,15 @@
 
       <!-- Main Content -->
       <main class="main-content ingresos_container">
-        <form>
+        <form method="POST">
+        <input type="hidden" name="form_type" value="ingreso">
+
           <h2>¡Registremos tus ingresos!</h2>
           <label for="cantidad">Cantidad de ingreso:</label>
-          <input type="number" id="cantidad" name="cantidad">
+          <input type="number" step="0.01" name="monto" required><br>
       
           <label for="fecha">Fecha de ingreso:</label>
-          <input type="date" id="fecha" name="fecha">
+          <input type="date" name="fecha_ingreso" required><br>
       
           <label for="nota">Nota del ingreso:</label>
           <textarea id="nota" name="nota" ></textarea>

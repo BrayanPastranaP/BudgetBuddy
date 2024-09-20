@@ -188,7 +188,8 @@ header h2 {
     flex: 1 1 100%;
 }
 
-button {
+button,
+.button_action {
     background-color: #FF00FF;
     color: #fff;
     border: none;

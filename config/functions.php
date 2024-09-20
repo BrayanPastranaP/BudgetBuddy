@@ -9,6 +9,8 @@ function agregarIngreso($monto, $fecha, $nota) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("dss", $monto, $fecha, $nota);
     $stmt->execute();
+
+    header("Location: index.php");
 }
 
 // Función para agregar un gasto
@@ -19,6 +21,8 @@ function agregarGasto($cantidad_gasto, $fecha_gasto, $tipo_gasto) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("dss", $cantidad_gasto, $fecha_gasto, $tipo_gasto);
     $stmt->execute();
+
+    header("Location: index.php");
 }
 
 // Función para obtener ingresos

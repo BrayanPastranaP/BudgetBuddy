@@ -55,3 +55,8 @@ const myChart = new Chart(ctx, {
         }
     }
 });
+
+
+
+const button_gastos = document.querySelector(".button_gastos");
+button_gastos.submit(window.location = "index.php")
