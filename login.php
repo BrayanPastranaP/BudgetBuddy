@@ -23,18 +23,18 @@
 
       <!-- Main Content -->
       <main class="main-content login_container">
-        <form class="login">
+        <form class="login" action="config/login.php" method="POST">
           <h2>Iniciar Sesion</h2>
-          <label for="cantidad">Usuario</label>
-          <input type="text" id="cantidad" name="cantidad">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario">
 
-          <label for="cantidad">Password</label>
-          <input type="password" id="cantidad" name="cantidad">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password">
       
           <div class="button-container">
-            <a href="index.php" class="btn__login" href="#">Iniciar</a>
-            <a href="crear.php" class="btn__register" href="#">Crear Cuenta</a>
-          </div>
+  <button type="submit" class="btn__login">Iniciar</button>
+  <a href="crear.php" class="btn__register">Crear Cuenta</a>
+</div>
         </form> 
       </main>
     </div>
