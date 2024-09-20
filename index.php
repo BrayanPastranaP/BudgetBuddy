@@ -85,9 +85,10 @@ $total_gasto = $result_gastos->fetch_assoc()['total_gasto'] ?? 0;
           <section class="stats">
             <div class="stat-item chart banner_inicial">
               <h3>Recomendaciones</h3>
+              <br>
+              
               <p>
-                De acuerdo a tus gastos te recomendamos gastar $300 pesos menos
-                en caprichos para cuidar tu bolsillo
+                <?php echo evaluarFinanzas();?>
               </p>
             </div>
             <div class="stat-item">

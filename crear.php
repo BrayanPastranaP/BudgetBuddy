@@ -23,38 +23,43 @@
 
       <!-- Main Content -->
       <main class="main-content login_container">
-        <form class="login">
-          <h2>Registro de Datos</h2>
-          <label for="cantidad">Nombre</label>
-          <input type="text" id="cantidad" name="cantidad">
+      <form class="login" action="config/register.php" method="POST">
+  <h2>Registro de Datos</h2>
 
-          <label for="cantidad">Edad</label>
-          <input type="number" id="cantidad" name="cantidad">
+  <label for="nombre">Nombre</label>
+  <input type="text" id="nombre" name="nombre" required>
 
-          <label for="cantidad">Género</label>
-          <input type="text" id="cantidad" name="cantidad">
+  <label for="edad">Edad</label>
+  <input type="number" id="edad" name="edad" required>
 
-          <label for="cantidad">Ocupación</label>
-          <input type="text" id="cantidad" name="cantidad">
+  <label for="genero">Género</label>
+  <input type="text" id="genero" name="genero" required>
 
-          <label for="cantidad">Localidad</label>
-          <input type="text" id="cantidad" name="cantidad">
+  <label for="ocupacion">Ocupación</label>
+  <input type="text" id="ocupacion" name="ocupacion" required>
 
-          <label for="cantidad">Ingreso aproximado por mes</label>
-          <input type="number" id="cantidad" name="cantidad">
+  <label for="localidad">Localidad</label>
+  <input type="text" id="localidad" name="localidad" required>
 
-          <label for="cantidad">Meta financiera</label>
-          <input type="text" id="cantidad" name="cantidad">
+  <label for="ingreso_mensual">Ingreso aproximado por mes</label>
+  <input type="number" id="ingreso_mensual" name="ingreso_mensual" required>
 
-          <label for="cantidad">Arranco mis finanzas con...</label>
-          <input type="number" id="cantidad" name="cantidad">
+  <label for="meta_financiera">Meta financiera</label>
+  <input type="text" id="meta_financiera" name="meta_financiera" required>
 
-          
-      
-          <div class="button-container">
-            <a href="index.php" class="btn__register" href="#">Crear Cuenta</a>
-          </div>
-        </form> 
+  <label for="capital_inicial">Arranco mis finanzas con...</label>
+  <input type="number" id="capital_inicial" name="capital_inicial" required>
+
+  <label for="usuario">Usuario</label>
+  <input type="text" id="usuario" name="usuario" required>
+
+  <label for="password">Contraseña</label>
+  <input type="password" id="password" name="password" required>
+
+  <div class="button-container">
+    <button type="submit" class="btn__register">Crear Cuenta</button>
+  </div>
+</form> 
       </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
