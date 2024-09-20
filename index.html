@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BudgetBuddy Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!--==================== UNICONS ====================-->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v3.0.6/css/line.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <!-- Botón del menú hamburguesa -->
+      <div class="hamburger-menu">
+        <i class="uil uil-bars"></i>
+      </div>
+
+      <aside class="sidebar">
+        <div class="container__nav">
+          <div class="logo">
+            <img src="img/logo.png" alt="Logotipo" />
+            <h2>BudgetBuddy</h2>
+          </div>
+
+          <nav>
+            <ul>
+              <li>
+                <a href="index.html" class="nav__active"
+                  ><i class="uil uil-estate"></i> Menú principal</a
+                >
+              </li>
+              <li>
+                <a href="ingresos.html"><i class="uil uil-plus-circle"></i> Ingresos</a>
+              </li>
+              <li>
+                <a href="gastos.html"><i class="uil uil-minus-circle"></i> Gastos</a>
+              </li>
+              <li>
+                <a href="#"><i class="uil uil-file-copy-alt"></i> Reportes</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="sidebar-footer">
+          <a href="#"><i class="uil uil-setting"></i> Configuración</a>
+          <a href="login.html"><i class="uil uil-sign-out-alt"></i> Cerrar sesión</a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header>
+          <h1>¡Bienvenido de nuevo!</h1>
+          <h2>Pietro Filiberto</h2>
+        </header>
+
+        <div class="content-flex">
+          <!-- Stats Section -->
+          <section class="stats">
+            <div class="stat-item chart banner_inicial">
+              <h3>Recomendaciones</h3>
+              <p>
+                De acuerdo a tus gastos te recomendamos gastar $300 pesos menos
+                en caprichos para cuidar tu bolsillo
+              </p>
+            </div>
+            <div class="stat-item">
+              <h3>Gastos semanales</h3>
+              <p class="degradado">$950</p>
+            </div>
+            <div class="stat-item">
+              <h3>Gasto mensual promedio</h3>
+              <p class="degradado">$5,800</p>
+            </div>
+            <div class="stat-item chart">
+              <h3>Veamos cómo van tus finanzas</h3>
+              <!-- Contenedor para la gráfica -->
+              <canvas id="myChart" width="400" height="200"></canvas>
+            </div>
+          </section>
+
+          <!-- Ads Section -->
+          <section class="ads">
+            <div class="ad">
+              <img src="img/add.png" alt="Anuncio 1" />
+            </div>
+            <div class="stat-item comparacion_mensual">
+              <h3>Comparación mensual</h3>
+              <p>
+                Has gastado <br><span class="degradado">$1,200</span><br> más que el mes
+                pasado
+              </p>
+              <button>Generar reporte</button>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
