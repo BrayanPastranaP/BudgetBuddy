@@ -1,3 +1,20 @@
+<?php
+require 'config/functions.php';
+
+// Obtener todos los ingresos
+$sql_ingresos = "SELECT SUM(monto) as total_ingreso FROM ingresos";
+$result_ingresos = $conn->query($sql_ingresos);
+$total_ingreso = $result_ingresos->fetch_assoc()['total_ingreso'] ?? 0;
+
+// Obtener todos los gastos
+$sql_gastos = "SELECT SUM(cantidad_gasto) as total_gasto FROM gastos";
+$result_gastos = $conn->query($sql_gastos);
+$total_gasto = $result_gastos->fetch_assoc()['total_gasto'] ?? 0;
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -30,17 +47,17 @@
           <nav>
             <ul>
               <li>
-                <a href="index.html" class="nav__active"
+                <a href="index.php" class="nav__active"
                   ><i class="uil uil-estate"></i> Menú principal</a
                 >
               </li>
               <li>
-                <a href="ingresos.html"
+                <a href="ingresos.php"
                   ><i class="uil uil-plus-circle"></i> Ingresos</a
                 >
               </li>
               <li>
-                <a href="gastos.html"
+                <a href="gastos.php"
                   ><i class="uil uil-minus-circle"></i> Gastos</a
                 >
               </li>
@@ -50,7 +67,7 @@
 
         <div class="sidebar-footer">
           <a href="#"><i class="uil uil-setting"></i> Configuración</a>
-          <a href="login.html"
+          <a href="login.php"
             ><i class="uil uil-sign-out-alt"></i> Cerrar sesión</a
           >
         </div>
@@ -74,12 +91,12 @@
               </p>
             </div>
             <div class="stat-item">
-              <h3>Gastos semanales</h3>
-              <p class="degradado">$950</p>
+              <h3>Ingresos semanales</h3>
+              <p class="degradado total_ingreso">$<?php echo $total_ingreso; ?></p>
             </div>
             <div class="stat-item">
-              <h3>Gasto mensual promedio</h3>
-              <p class="degradado">$5,800</p>
+              <h3>Gasto semanal</h3>
+              <p class="degradado total_gasto">$<?php echo $total_gasto; ?></p>
             </div>
             <div class="stat-item chart">
               <h3>Veamos cómo van tus finanzas</h3>

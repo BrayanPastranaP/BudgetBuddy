@@ -30,15 +30,15 @@
           <nav>
             <ul>
               <li>
-                <a href="index.html"
+                <a href="index.php"
                   ><i class="uil uil-estate"></i> Menú principal</a
                 >
               </li>
               <li>
-                <a href="ingresos.html" ><i class="uil uil-plus-circle"></i> Ingresos</a>
+                <a href="ingresos.php" ><i class="uil uil-plus-circle"></i> Ingresos</a>
               </li>
               <li>
-                <a href="gastos.html" class="nav__active"><i class="uil uil-minus-circle"></i> Gastos</a>
+                <a href="gastos.php" class="nav__active"><i class="uil uil-minus-circle"></i> Gastos</a>
               </li>
             </ul>
           </nav>
@@ -46,7 +46,7 @@
 
         <div class="sidebar-footer">
           <a href="#"><i class="uil uil-setting"></i> Configuración</a>
-          <a href="login.html"><i class="uil uil-sign-out-alt"></i> Cerrar sesión</a>
+          <a href="login.php"><i class="uil uil-sign-out-alt"></i> Cerrar sesión</a>
         </div>
       </aside>
 

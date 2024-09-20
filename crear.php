@@ -52,7 +52,7 @@
           
       
           <div class="button-container">
-            <a href="index.html" class="btn__register" href="#">Crear Cuenta</a>
+            <a href="index.php" class="btn__register" href="#">Crear Cuenta</a>
           </div>
         </form> 
       </main>

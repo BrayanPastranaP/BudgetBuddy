@@ -32,8 +32,8 @@
           <input type="password" id="cantidad" name="cantidad">
       
           <div class="button-container">
-            <a href="index.html" class="btn__login" href="#">Iniciar</a>
-            <a href="crear.html" class="btn__register" href="#">Crear Cuenta</a>
+            <a href="index.php" class="btn__login" href="#">Iniciar</a>
+            <a href="crear.php" class="btn__register" href="#">Crear Cuenta</a>
           </div>
         </form> 
       </main>

@@ -9,8 +9,20 @@ hamburgerMenu.addEventListener('click', () => {
 
 
 // Datos numéricos
-const data1 = 5800;
-const data2 = 1500;
+// Obtén el elemento que contiene el valor del gasto
+const totalGastoElement = document.querySelector('.total_gasto');
+const totalIngresoElement = document.querySelector('.total_ingreso');
+
+// Obtén el valor de texto dentro del elemento (ej: "$123.45")
+const totalGastoTexto = totalGastoElement.textContent;
+const totalIngresoTexto = totalIngresoElement.textContent;
+
+// Elimina el símbolo de dólar y convierte el valor a número
+const totalGastoNumerico = parseFloat(totalGastoTexto.replace('$', ''));
+const totalIngresoNumerico = parseFloat(totalIngresoTexto.replace('$', ''));
+
+const data1 = totalGastoNumerico;
+const data2 = totalIngresoNumerico;
 
 // Obtener el contexto del canvas donde se mostrará la gráfica
 const ctx = document.getElementById('myChart').getContext('2d');
